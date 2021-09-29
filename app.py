@@ -54,7 +54,7 @@ while True:
                 "chat_id": CHAT_ID
             }
             x = requests.post(URL, data = obj)
-            print("Reiniciando")
+
             erros = 0
         else:
             print("Total de Erros: ", erros)
