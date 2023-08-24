@@ -24,6 +24,8 @@ The workflow is defined in `.github/workflows/cron-workflow.yml`. It uses Python
 
 - **`check_availability.py`**: Checks if the website is available by making requests and handling possible errors.
 
+- **`check_dns.py`**: Check if the website's DNS is OK.
+
 - **`check_response_time.py`**: Measures the response time of the website and sends an alert if it's too slow.
 
 - **`check_expected_content.py`**: Verifies if the expected content is present on the website.
