@@ -1,6 +1,6 @@
 # Website Health Check Workflow
 
-
+[![Workflow](https://github.com/DaviAntonaji/python-website-monitor/actions/workflows/cron-workflow.yml/badge.svg)](https://github.com/DaviAntonaji/python-website-monitor/actions/workflows/cron-workflow.yml)
 ![License](https://img.shields.io/github/license/DaviAntonaji/python-website-monitor?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/DaviAntonaji/python-website-monitor?style=flat-square)
 
