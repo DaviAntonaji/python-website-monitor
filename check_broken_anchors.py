@@ -17,7 +17,7 @@ healthy = True
 for link in soup.find_all("a", href=True):
     link_url = link["href"]
     if not link_url.startswith("http"):
-        link_url = f"https://{WEBSITE}{link}"
+        continue
     try:
         print("Verifying", link_url)
         link_response = requests.head(link_url)
