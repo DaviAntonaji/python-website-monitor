@@ -4,6 +4,7 @@ from datetime import datetime
 from telegram import send_telegram_alert
 from config import WEBSITE
 from bs4 import BeautifulSoup
+from messages import MESSAGE_EMPTY_TITLE_TAG, MESSAGE_INVALID_TITLE_TAG
 
 
 now = datetime.now()
@@ -18,9 +19,9 @@ try:
         print("Verifying title...")
         title = title_tag.get_text()
         if not title:
-            raise Exception(f"{WEBSITE} O site possui uma tag <title> vazia.")
+            raise Exception(MESSAGE_EMPTY_TITLE_TAG)
         elif title != "Davi Antonaji":
-            raise Exception(f"{WEBSITE} O site possui uma tag <title> invalida. ({title})")
+            raise Exception(f"{MESSAGE_INVALID_TITLE_TAG} ({title})")
 
 except Exception as e:
-    send_telegram_alert(str(e))
+    send_telegram_alert(WEBSITE, str(e))

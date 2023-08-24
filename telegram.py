@@ -1,11 +1,11 @@
 import os
 import requests
 from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
-def send_telegram_alert(msg):
+def send_telegram_alert(WEBSITE, msg):
     
     URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {
-        "text": msg,
+        "text": f"[{WEBSITE}] {msg}",
         "chat_id": TELEGRAM_CHAT_ID
     }
     response = requests.post(URL, json=payload)

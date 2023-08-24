@@ -4,7 +4,7 @@ from datetime import datetime
 from telegram import send_telegram_alert
 from config import WEBSITE
 from bs4 import BeautifulSoup
-
+from messages import MESSAGE_LINK_COULDNT_BE_VERIFIED, MESSAGE_BROKEN_LINK_FOUND
 
 now = datetime.now()
 timestamp = int(datetime.timestamp(now))
@@ -23,10 +23,10 @@ for link in soup.find_all("a", href=True):
             link_response = requests.head(link_url)
             if link_response.status_code >= 400:
                 healthy = False
-                send_telegram_alert(f"{WEBSITE} Broken link found: {link_url}")
+                send_telegram_alert(WEBSITE, f"{MESSAGE_BROKEN_LINK_FOUND}: {link_url}")
         except requests.exceptions.RequestException as e:
             healthy = False
-            send_telegram_alert(f"{WEBSITE} The link couldn't be verified: {link_url}")
+            send_telegram_alert(WEBSITE, f"{MESSAGE_LINK_COULDNT_BE_VERIFIED} {link_url}")
 
 if not healthy:
     raise Exception("Broken links founded")

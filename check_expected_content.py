@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 from telegram import send_telegram_alert
 from config import WEBSITE
+from messages import MESSAGE_EXPECTED_CONTENT_NOT_FOUND
 
 now = datetime.now()
 timestamp = int(datetime.timestamp(now))
@@ -12,8 +13,7 @@ response = requests.get(url)
 
 expected_content = "All Rights Reserved"
 if expected_content not in response.text:
-    content_alert_message = f"{WEBSITE} Expected content not found on the page!"
-    send_telegram_alert(content_alert_message)
-    raise Exception(content_alert_message)
+    send_telegram_alert(WEBSITE, MESSAGE_EXPECTED_CONTENT_NOT_FOUND)
+    raise Exception(MESSAGE_EXPECTED_CONTENT_NOT_FOUND)
 else:
     print("Expected content found on the page.")
