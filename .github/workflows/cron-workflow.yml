@@ -30,6 +30,9 @@ jobs:
         run: |
           pip3 install -r requirements.txt
 
+      - name: Check DNS
+        run: python check_dns.py
+      
       - name: Check Website Availability
         run: python check_availability.py
 
@@ -38,9 +41,10 @@ jobs:
 
       - name: Check Expected Content
         run: python check_expected_content.py
+      
+      - name: Check Title Tag
+        run: python check_title.py
      
       - name: Check Broken Anchors
         run: python check_broken_anchors.py
       
-      - name: Check Title
-        run: python check_title.py

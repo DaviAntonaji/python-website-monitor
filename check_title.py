@@ -15,6 +15,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 title_tag = soup.find("title")
 try:
     if title_tag:
+        print("Verifying title...")
         title = title_tag.get_text()
         if not title:
             raise Exception(f"{WEBSITE} O site possui uma tag <title> vazia.")

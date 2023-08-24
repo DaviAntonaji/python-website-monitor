@@ -28,6 +28,10 @@ The workflow is defined in `.github/workflows/cron-workflow.yml`. It uses Python
 
 - **`check_expected_content.py`**: Verifies if the expected content is present on the website.
 
+- **`check_title.py`**: Check if the website title is OK.
+
+- **`check_broken_anchors`**: Check if there are any links (HTML anchors) that are invalid (returning a status_code other than 200).
+
 The configuration values are stored in `config.py`, and Telegram alerts are sent using `telegram.py`.
 
 ## Configuration
