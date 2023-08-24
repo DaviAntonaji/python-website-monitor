@@ -13,15 +13,18 @@ url = f"https://{WEBSITE}?v={timestamp}"
 response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
 
-
+healthy = True
 for link in soup.find_all("a", href=True):
     link_url = link["href"]
-    print("Verifying", link_url)
     if not link_url.startswith("http"):
-        continue
+        link_url = f"https://{WEBSITE}{link}"
     try:
+        print("Verifying", link_url)
         link_response = requests.head(link_url)
         if link_response.status_code >= 400:
             send_telegram_alert(f"{WEBSITE} Broken link found: {link_url}")
-    except requests.exceptions.RequestException:
+    except requests.exceptions.RequestException as e:
         send_telegram_alert(f"{WEBSITE} The link couldn't be verified: {link_url}")
+
+if not healthy:
+    raise Exception("Broken links founded")
