@@ -22,8 +22,10 @@ for link in soup.find_all("a", href=True):
         print("Verifying", link_url)
         link_response = requests.head(link_url)
         if link_response.status_code >= 400:
+            healthy = False
             send_telegram_alert(f"{WEBSITE} Broken link found: {link_url}")
     except requests.exceptions.RequestException as e:
+        healthy = False
         send_telegram_alert(f"{WEBSITE} The link couldn't be verified: {link_url}")
 
 if not healthy:
