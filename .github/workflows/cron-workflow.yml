@@ -1,0 +1,40 @@
+name: Workflow
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+jobs:
+  verify:
+    name: Health Check Website
+    runs-on: ubuntu-latest
+    env:
+      TELEGRAM_TOKEN: ${{secrets.TELEGRAM_TOKEN}}
+      TELEGRAM_CHAT_ID: ${{secrets.TELEGRAM_CHAT_ID}}
+      MAX_ATTEMPTS: ${{secrets.MAX_ATTEMPTS}}
+      MAX_RESPONSE_TIME: ${{secrets.MAX_RESPONSE_TIME}}
+      WEBSITE: ${{secrets.WEBSITE}}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          pip3 install -r requirements.txt
+
+      - name: Check Website Availability
+        run: python check_availability.py
+
+      - name: Check Response Time
+        run: python check_response_time.py
+
+      - name: Check Expected Content
+        run: python check_expected_content.py
