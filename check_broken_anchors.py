@@ -16,7 +16,8 @@ soup = BeautifulSoup(response.text, "html.parser")
 healthy = True
 for link in soup.find_all("a", href=True):
     link_url = link["href"]
-    if link_url.startswith("http"):
+    # Linkedin block requests for python
+    if link_url.startswith("http") and "linkedin" not in link_url:
         try:
             print("Verifying", link_url)
             link_response = requests.head(link_url)
