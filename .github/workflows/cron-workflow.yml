@@ -38,3 +38,6 @@ jobs:
 
       - name: Check Expected Content
         run: python check_expected_content.py
+     
+      - name: Check Broken Anchors
+        run: python check_broken_anchors.py
