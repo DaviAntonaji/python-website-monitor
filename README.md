@@ -1,6 +1,8 @@
 # Website Health Check Workflow
 
-![GitHub Actions](https://img.shields.io/github/workflow/status/DaviAntonaji/python-website-monitor/Workflow?label=Workflow&style=flat-square)
+
+![GitHub Actions](https://img.shields.io/github/workflow/status/DaviAntonaji/python-website-monitor/Workflow&style=flat-square)
+
 ![License](https://img.shields.io/github/license/DaviAntonaji/python-website-monitor?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/DaviAntonaji/python-website-monitor?style=flat-square)
 
