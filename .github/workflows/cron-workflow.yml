@@ -41,3 +41,6 @@ jobs:
      
       - name: Check Broken Anchors
         run: python check_broken_anchors.py
+      
+      - name: Check Title
+        run: python check_title.py
