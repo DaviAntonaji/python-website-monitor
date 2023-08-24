@@ -7,6 +7,9 @@
 This GitHub Actions workflow periodically checks the health of a website by performing the following tests:
 
 - Availability Check
+- DNS Check
+- Title in Page
+- Broken Anchors
 - Response Time Check
 - Expected Content Check
 
