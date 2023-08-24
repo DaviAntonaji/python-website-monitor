@@ -11,5 +11,6 @@ parsed_url = urlparse(url)
 domain = parsed_url.netloc
 try:
     socket.gethostbyname(domain)
+    print("DNS OK")
 except socket.gaierror:
     send_telegram_alert(f"{WEBSITE} The DNS domain is not configured correctly.")

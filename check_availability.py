@@ -9,6 +9,13 @@ timestamp = int(datetime.timestamp(now))
 url = f"https://{WEBSITE}?v={timestamp}"
 
 
+try:
+    response = requests.get(url)
+    response.raise_for_status()
+except requests.exceptions.RequestException:
+    send_telegram_alert(f"{WEBSITE} The website is not online or could not be accessed.")
+
+
 
 for attempt in range(MAX_ATTEMPTS):
     try:
