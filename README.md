@@ -4,18 +4,18 @@
 ![License](https://img.shields.io/github/license/DaviAntonaji/python-website-monitor?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/DaviAntonaji/python-website-monitor?style=flat-square)
 
-Welcome to the **Website Health Check Workflow**! 🏥💻 This GitHub Actions workflow is designed to ensure the optimal performance and functionality of your website through a set of systematic tests and monitoring. 
+> Welcome to the **Website Health Check Workflow**! 🏥💻 This GitHub Actions workflow is designed to ensure the optimal performance and functionality of your website through a set of systematic tests and monitoring.
 
 ## Workflow Overview 📋
 
 This workflow operates as a dedicated digital QA specialist, continuously running a battery of tests to guarantee your website's well-being. The checks performed include:
 
-- 🕵️‍♀️ **Availability Check**: Verifying the presence and accessibility of your website.
-- 🔍 **DNS Check**: Validating the integrity of your website's domain name system.
-- 📜 **Title in Page**: Ensuring the accuracy of your web page titles.
-- 🔗 **Broken Anchors**: Identifying and addressing broken hyperlinks.
-- ⏱️ **Response Time Check**: Measuring the speed of your website's responses.
-- 🎯 **Expected Content Check**: Validating the presence of crucial content.
+- [x] 🕵️‍♀️ **Availability Check**: Verifying the presence and accessibility of your website.
+- [x] 🔍 **DNS Check**: Validating the integrity of your website's domain name system.
+- [x] 📜 **Title in Page**: Ensuring the accuracy of your web page titles.
+- [x] 🔗 **Broken Anchors**: Identifying and addressing broken hyperlinks.
+- [x] ⏱️ **Response Time Check**: Measuring the speed of your website's responses.
+- [x] 🎯 **Expected Content Check**: Validating the presence of crucial content.
 
 Should any anomalies be detected, the workflow promptly alerts you through Telegram messages, ensuring quick remediation. 📢🤖
 
